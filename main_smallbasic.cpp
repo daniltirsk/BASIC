@@ -7,11 +7,11 @@
 #include "razbor_double.h"
 #include "small_basic.h"
 
-char *prog;//Указатель на точку входа в программу
-char *p_buf;//Указатель на точку старта программы
+char *prog;//Г“ГЄГ Г§Г ГІГҐГ«Гј Г­Г  ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Гў ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі
+char *p_buf;//Г“ГЄГ Г§Г ГІГҐГ«Гј Г­Г  ГІГ®Г·ГЄГі Г±ГІГ Г°ГІГ  ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»
 
-//int variables[26]={0,0}; //Доступно 26 пересменных A - Z
-double variables[26]={0.0}; //Доступно 26 пересменных A - Z
+//int variables[26]={0,0}; //Г„Г®Г±ГІГіГЇГ­Г® 26 ГЇГҐГ°ГҐГ±Г¬ГҐГ­Г­Г»Гµ A - Z
+double variables[26]={0.0}; //Г„Г®Г±ГІГіГЇГ­Г® 26 ГЇГҐГ°ГҐГ±Г¬ГҐГ­Г­Г»Гµ A - Z
 
 commands table[] = {
 	"print", PRINT,
@@ -114,15 +114,12 @@ int main(int argc, char *argv[]){
 			//check for assignment statement
 			if(token_type == VARIABLE){
 
-				putback();//Возвратить элемент во вводной поток
+				putback();//Г‚Г®Г§ГўГ°Г ГІГЁГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ ГўГ® ГўГўГ®Г¤Г­Г®Г© ГЇГ®ГІГ®ГЄ
 				assignment();//must be assignment statement
 //				printf("token_type=%d token=%lf\n",token_type,variables[var]);
 			}
 			else //is command
 				switch(tok){
-					/*case SIN:
-						exec_sin();
-						break;*/
 					case PRINT:
 						print();
 						break;
@@ -304,7 +301,7 @@ void print(){
 		}
 		else{//is expression
 			putback();
-			eval_exp(result);//Точка входа в разбор выражения
+			eval_exp(result);//Г’Г®Г·ГЄГ  ГўГµГ®Г¤Г  Гў Г°Г Г§ГЎГ®Г° ГўГ»Г°Г Г¦ГҐГ­ГЁГї
 			get_token();
 //			printf("X=%lf\n",result);
 			std::cout<<result;
